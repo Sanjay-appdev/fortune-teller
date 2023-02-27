@@ -7,7 +7,16 @@ class NumbersController < ApplicationController
       
       @zebra.push(giraffe)
     end
+      render({ :template => "lottery_stuff/woohoo.html.erb"})
+   end
+      def loser
+  @zebra = Array.new
 
-    render({ :template => "lottery_stuff/woohoo.html.erb"})
-  end 
+  5.times do
+    giraffe = rand(1...100)
+    
+    @zebra.push(giraffe)
+  end
+     render({ :template => "lottery_stuff/unlucky.html.erb"})
+  end
 end
